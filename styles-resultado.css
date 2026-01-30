@@ -1,1 +1,295 @@
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-content {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.result-emoji {
+    font-size: 100px;
+    margin-bottom: 20px;
+    animation: rotateIn 0.6s ease-out;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-180deg) scale(0);
+    }
+    to {
+        transform: rotate(0) scale(1);
+    }
+}
+
+.result-title {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 36px;
+    color: #1e3a8a;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.result-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.result-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.result-message {
+    font-size: 26px;
+    color: #334155;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-weight: 600;
+    white-space: pre-line;
+    padding: 0 20px;
+    animation: slideIn 0.8s ease-out 0.5s both;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.dato-display {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 15px;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    animation: bounceIn 0.8s ease-out 0.7s both;
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.tiktok-credit {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+.back-btn {
+    background: linear-gradient(135deg, #3b82f6 0%, #1e3a8a 100%);
+    color: white;
+    padding: 16px 45px;
+    border: none;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Fredoka', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-height: 50px;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+.back-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+}
+
+.back-btn:active {
+    transform: translateY(-1px);
+}
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    background: #f59e0b;
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        border-radius: 20px;
+    }
+
+    .result-content {
+        padding: 40px 20px;
+    }
+
+    .result-emoji {
+        font-size: 80px;
+        margin-bottom: 15px;
+    }
+
+    .result-title {
+        font-size: 28px;
+        margin-bottom: 25px;
+    }
+
+    .result-image {
+        margin-bottom: 25px;
+    }
+
+    .result-message {
+        font-size: 20px;
+        margin-bottom: 25px;
+        padding: 0 10px;
+    }
+
+    .dato-display {
+        font-size: 18px;
+        padding: 12px 28px;
+    }
+
+    .back-btn {
+        padding: 14px 38px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .result-content {
+        padding: 30px 15px;
+    }
+
+    .result-emoji {
+        font-size: 70px;
+    }
+
+    .result-title {
+        font-size: 24px;
+    }
+
+    .result-message {
+        font-size: 18px;
+    }
+
+    .dato-display {
+        font-size: 16px;
+        padding: 10px 24px;
+    }
+
+    .back-btn {
+        padding: 12px 32px;
+        font-size: 15px;
+    }
+
+    .tiktok-credit {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 360px) {
+    .container {
+        border-radius: 15px;
+    }
+
+    .result-content {
+        padding: 25px 15px;
+    }
+
+    .result-emoji {
+        font-size: 60px;
+    }
+
+    .result-title {
+        font-size: 22px;
+    }
+
+    .result-message {
+        font-size: 16px;
+    }
+
+    .dato-display {
+        font-size: 15px;
+    }
+}
